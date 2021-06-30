@@ -24,6 +24,13 @@
     Then I should see the site name
     
 
+#005
+  
+  Scenario: Verify that Log in button is visible  
+    Given I am on the homepage  
+    Then I should see the Login button in the upper right corner
+  
+  
 #006
   
   Scenario: Verify that Pinterest logo is visible  
@@ -31,17 +38,26 @@
     Then I should see the Pinterest logo in the upper left corner
     
   
-  <br>
-  <br>
+#007
   
-<b>TEST CASES</b>
+  Scenario: Verify that text in the center of the page is visible   
+    Given I am on the homepage  
+    Then I should see the text in the center of the page
 
-- <i>[Pinterest] - Login with valid credentials	</i>
+  
+#008
+  
+  Scenario Outline: Verify that all elements are present on homepage when user is logged in 
+    Given I am on the homepage  
+    When I click on the Log in button  
+    And I enter "<email>" in the Email field  
+    And I enter "<password>" in the Password field  
+    And I click on Log in button  
+    Then I should see the all elements
+  
 
-1) Navigate to "https://www.pinterest.com/"
-2) Click on the "Log in" button
-3) In the "Email" field enter "jjovanovictest@gmail.com"
-4) In the "Password" field enter "Test123!"
-5) Click on the "Log in" button
+    Examples:
+      | email                    | password |
+      | jjovanovictest@gmail.com | Test123! |
 
-Expected result: User is logged in and he is redirected to homepage.
+  <br>
