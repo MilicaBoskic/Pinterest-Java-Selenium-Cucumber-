@@ -47,7 +47,7 @@
   
 #008
   
-  Scenario Outline: Verify that all elements are present on homepage when user is logged in 
+  Scenario Outline: Verify that all elements are present on homepage when user is logged in   
     Given I am on the homepage  
     When I click on the Log in button  
     And I enter "<email>" in the Email field  
